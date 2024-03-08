@@ -1,7 +1,11 @@
 # React + Vite
 id 100039315
-<a href="website-project-iota.vercel.app">Resume Builder</a>
+Team : Fahad, sharjeel Ubaid
+<a href="https://website-project-iota.vercel.app">Resume Builder</a>
 <a href="https://github.com/ubaidahmed04/website-project">check repo</a>
+
+<br />
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
