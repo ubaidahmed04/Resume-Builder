@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.home-main {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    color: white;
+}
+.text-container h3 {
+    font-weight: 600;
+}
+.text-container .btn {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    background-color: #494949;
+}
+.text-container .btn:hover {
+    background-color: #1c1c1c;
+}
+
+@media (max-width: 600px) {
+    .text-container h3 {
+        font-size: 40px;
+        font-weight: 600;
+    }  
+}
+
+
+.img-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-main .resume-img {
+  height: 100vh;
+  object-fit: cover;
+  object-position: left;
+  transform-style: preserve-3d;
+  transform: translate(20%, 0%) perspective(1000px) rotateY(20deg)
+    rotateX(10deg);
+  transition: all 0.3s;
+  box-shadow: 0px 20px 20px #494949;
+}
+
+.home-main .resume-img:hover {
+  box-shadow: 0px 20px 20px #000;
+  cursor: pointer;
+  transform: translate(10%, 0%) perspective(1500px) rotateY(10deg)
+    rotateX(10deg);
+}
+
+
+.home-main .text-para {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
