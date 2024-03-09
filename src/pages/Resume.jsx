@@ -25,8 +25,8 @@ function Resume() {
 
     return (
         <div className='main'>
-            <NavLink to="/">
-                <ArrowBackIcon className='icon' />
+            <NavLink to="/" className='icon' >
+                <ArrowBackIcon />
             </NavLink>
             <div className="container" ref={quotesRef}>
                 <div className="header">

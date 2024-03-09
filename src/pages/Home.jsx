@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom'
 
 function Home() {
 
+    const data = JSON.parse(localStorage.getItem("resumeData"))
     return (
         <div className='home-main'>
             <Container maxWidth="xl">
@@ -22,9 +23,21 @@ function Home() {
                         </Typography>
                         <br />
                         <NavLink to="/form">
-                        <Button variant="contained" className='btn'>
-                            Get start
-                        </Button>
+                            <Button variant="contained" className='btn'>
+                                Get start
+                            </Button>
+                        </NavLink>
+                        <NavLink to="/resume">
+                            <div className='mybuild'>   
+                                <h5>{data && data.yourName ? data.yourName : ""}</h5>
+                                <p>
+                                    {data && data.summary ? data.summary : ""} <br />
+                                    {data && data.email ? data.email : ""} <br />
+                                    {data && data.phoneNo ? data.phoneNo : ""} <br />
+                                    {data && data.profession ? data.profession : ""}
+                                </p>
+
+                            </div>
                         </NavLink>
                     </Grid>
                     <Grid item xs={12} sm={6} className='img-container' display={{ xs: 'none', sm: 'block' }}>
