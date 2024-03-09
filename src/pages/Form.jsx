@@ -184,8 +184,8 @@ function ResumeForm() {
                 <h1>Qualification <span>(Optional)</span></h1>
                 <div>
                     <div className='qualification'>{data && data.qualification && data.qualification.map((v) => (
-                        <div key={v.id} className='mt-3 mb-3 d-flex justify-content-between'>
-                            <div>
+                        <div key={v.id} className='mt-3 mb-3 d-flex justify-content-between align-items-center'>
+                            <div className='d-flex flex-column justify-content-between'>
                                 <h4>{v.schoolName}</h4>
                                 <p>{v.faculty} - {v.passingYear}</p>
                             </div>
@@ -197,7 +197,7 @@ function ResumeForm() {
                         </div>
                     ))}</div>
                 </div>
-                <Button variant="dark" onClick={() => setModalShow(true)}>
+                <Button variant="primary" style={{width: "auto"}} onClick={() => setModalShow(true)}>
                     + Add Your Qualification
                 </Button>
                 <AddQualification
@@ -205,7 +205,7 @@ function ResumeForm() {
                     onHide={() => setModalShow(false)}
                 />
                 <br />
-                <Button type='submit' className='mt-3' variant='primary' onClick={submitResume}>Generate Resume
+                <Button type='submit' className='mt-3' variant='dark' onClick={submitResume}>Generate Resume
                 </Button>
                 <Backdrop
                     sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -288,7 +288,7 @@ function AddQualification(props) {
                 </Form.Group>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={saveData}>Save</Button>
+                <Button variant="dark" onClick={saveData}>Save</Button>
             </Modal.Footer>
         </Modal>
     );
