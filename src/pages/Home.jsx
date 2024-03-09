@@ -3,7 +3,7 @@ import React from 'react'
 import { Container, Grid, Typography, Button } from '@mui/material'
 import { builder } from './../assets'
 import { NavLink } from 'react-router-dom'
-
+import { resumeSVG } from './../assets'
 
 function Home() {
 
@@ -28,7 +28,7 @@ function Home() {
                             </Button>
                         </NavLink>
                         <NavLink to="/resume">
-                            <div className='mybuild'>   
+                            <div className='mybuild'> 
                                 <h5>{data && data.yourName ? data.yourName : ""}</h5>
                                 <p>
                                     {data && data.summary ? data.summary : ""} <br />

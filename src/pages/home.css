@@ -28,6 +28,7 @@
 }
 .text-container .btn:hover {
     background-color: #1c1c1c;
+    color: white;
 }
 
 @media (max-width: 600px) {
@@ -77,9 +78,22 @@
   word-wrap: break-word;
   overflow: hidden;
   color: #fff;
-  background-color: #494949;
+  background-color: #4e5762;
+  position: absolute;
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #ffffff inset;
+  transition: all .3s;
 }
+.mybuild:hover {
+  box-shadow: -2px 2px 2px #0048ffa8;
+  transform: translate(10%, 0%) perspective(1500px) rotateY(10deg)
+    rotateX(10deg);
+}
+
 .mybuild h5 {
+  background-color: none;
+  z-index: 99 !important;
   font-size: .6em;
 }
 .mybuild p {
