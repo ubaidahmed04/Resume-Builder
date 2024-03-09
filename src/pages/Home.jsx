@@ -28,7 +28,8 @@ function Home() {
                             </Button>
                         </NavLink>
                         <NavLink to="/resume">
-                            <div className='mybuild'> 
+                            {data ? (
+                                <div className='mybuild'> 
                                 <h5>{data && data.yourName ? data.yourName : ""}</h5>
                                 <p>
                                     {data && data.summary ? data.summary : ""} <br />
@@ -38,6 +39,7 @@ function Home() {
                                 </p>
 
                             </div>
+                            ) : undefined}
                         </NavLink>
                     </Grid>
                     <Grid item xs={12} sm={6} className='img-container' display={{ xs: 'none', sm: 'block' }}>
