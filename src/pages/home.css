@@ -68,3 +68,21 @@
     font-weight: 400;
     font-style: italic;
 }
+
+.mybuild {
+  padding: 6px 8px;
+  width: 120px;
+  height: 160px;
+  margin: 25px 0px;
+  word-wrap: break-word;
+  overflow: hidden;
+  color: #fff;
+  background-color: #494949;
+}
+.mybuild h5 {
+  font-size: .6em;
+}
+.mybuild p {
+  font-size: .7em;
+  width: 100%;
+}

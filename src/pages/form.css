@@ -152,3 +152,17 @@ label {
   margin-left: 20px;
   color: #b3b3b3;
 }
+
+.icon {
+  position: fixed;
+  top: 30px;
+  left: 10%;
+  cursor: pointer;
+  color: #000;
+  background-color: #fff;
+  padding: 10px;
+  width: auto;
+  border-radius: 50%;
+  font-size: 1em;
+  z-index: 3;
+}

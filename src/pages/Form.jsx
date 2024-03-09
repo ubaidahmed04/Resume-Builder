@@ -7,6 +7,8 @@ import Modal from 'react-bootstrap/Modal';
 import { validateName, validatePhoneNumber, validateEmail } from './formFunction';
 import { Grid } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { NavLink } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function ResumeForm() {
     const [modalShow, setModalShow] = React.useState(false);
@@ -88,6 +90,9 @@ function ResumeForm() {
 
     return (
         <Container maxWidth="lg" className='resume-form'>
+             <NavLink to="/" className='icon'>
+                <ArrowBackIcon />
+            </NavLink>
             <Form>
                 <h1>personal details</h1>
                 <Grid container spacing={2}>
