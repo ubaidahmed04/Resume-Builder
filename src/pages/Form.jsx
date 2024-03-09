@@ -9,9 +9,15 @@ import { Grid } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { NavLink } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import { useNavigate } from 'react-router-dom';
+
 
 function ResumeForm() {
+    const navigate = useNavigate();
     const [modalShow, setModalShow] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
 
     const [formDetails, setDetails] = React.useState({
         yourName: '',
@@ -32,6 +38,12 @@ function ResumeForm() {
         });
     };
 
+    const handleClose = () => {
+        setOpen(false);
+    };
+    const handleOpen = () => {
+        setOpen(true);
+    };
 
     const fullNameState = validateName(formDetails.yourName)
     const phoneNumberState = validatePhoneNumber(formDetails.phoneNo)
@@ -63,34 +75,47 @@ function ResumeForm() {
         } else {
             let check = JSON.parse(localStorage.getItem("resumeData"))
             if (check) {
+                handleOpen()
                 let send = {
                     ...check,
                     ...formDetails
                 }
                 const data = JSON.stringify(send)
                 localStorage.setItem("resumeData", data)
-                location.href = "/resume"
+                setTimeout(() => {
+                    handleClose()
+                    navigate('/');
+                }, 3000);
             } else {
+                handleOpen()
                 const data = JSON.stringify(formDetails)
                 console.log(formDetails)
                 localStorage.setItem("resumeData", data)
-                location.href = "/resume"
+                setTimeout(() => {
+                    handleClose()
+                    navigate('/');
+                }, 2000);
             }
         }
     }
 
     const data = JSON.parse(localStorage.getItem("resumeData"));
+    const [dataChanged, setDataChanged] = React.useState(false);
 
+    React.useEffect(() => {
+        setDataChanged(prevState => !prevState);
+    }, [data]);
+    
     function deleteData(id) {
         const newArray = data.qualification.filter(obj => obj.id != id);
         data.qualification = newArray
+        setDataChanged(prevState => !prevState);
         localStorage.setItem("resumeData", JSON.stringify(data))
-        window.location.reload();
     }
 
     return (
         <Container maxWidth="lg" className='resume-form'>
-             <NavLink to="/" className='icon'>
+            <NavLink to="/" className='icon'>
                 <ArrowBackIcon />
             </NavLink>
             <Form>
@@ -180,8 +205,14 @@ function ResumeForm() {
                     onHide={() => setModalShow(false)}
                 />
                 <br />
-                <Button type='submit' className='mt-3' variant='primary' onClick={submitResume}>Generate Resume</Button>
-
+                <Button type='submit' className='mt-3' variant='primary' onClick={submitResume}>Generate Resume
+                </Button>
+                <Backdrop
+                    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                    open={open}
+                >
+                    <CircularProgress color="inherit" />
+                </Backdrop>
             </Form>
         </Container>
     )

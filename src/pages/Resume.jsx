@@ -12,14 +12,15 @@ function Resume() {
 
     const makePDF = () => {
         const quotes = quotesRef.current;
+        const canvasBackgroundColor = '#DAD7D7'; 
 
-        html2canvas(quotes).then((canvas) => {
+        html2canvas(quotes, { backgroundColor: canvasBackgroundColor }).then((canvas) => {
             const imgData = canvas.toDataURL('image/png');
             const pdf = new jsPDF();
-            const imgWidth = 210; // PDF width
-            const imgHeight = (canvas.height * imgWidth) / canvas.width; // Calculate PDF height
+            const imgWidth = 210;
+            const imgHeight = (canvas.height * imgWidth) / canvas.width; 
             pdf.addImage(imgData, 0, 0, imgWidth, imgHeight);
-            pdf.save('resume.pdf'); // Download the PDF
+            pdf.save('resume.pdf'); 
         });
     };
 
@@ -76,7 +77,7 @@ function Resume() {
                         <div className="section__list">
                             <div className="section__list-item">
                                 {
-                                    data?.qualification.length ? (
+                                    data?.qualification?.length ? (
                                         <>
                                             <div className="left">
                                                 <div className="name">Sample Institute of technology</div>

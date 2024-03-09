@@ -21,11 +21,16 @@ html {
   flex-direction: column !important;
   justify-content: center;
   color: white;
+  position: relative;
+  top: 70px; 
 }
 @media (max-width: 600px) {
   .home-main {
     padding: 20px 0px;
     display: block;
+  }
+  .text-container {
+    padding: 70px 0px;
   }
 }
 .text-container h3 {
@@ -80,31 +85,38 @@ html {
 
 .mybuild {
   padding: 6px 8px;
-  width: 120px;
-  height: 160px;
+  width: 100%;
   margin: 25px 0px;
   word-wrap: break-word;
   overflow: hidden;
   color: #fff;
-  background-color: #4e5762;
-  position: absolute;
-  position: absolute;
+  border: 1px solid #fff;
   border-radius: 5px;
   box-shadow: 2px 2px 2px #ffffff inset;
   transition: all 0.3s;
+  text-decoration: none;
 }
 .mybuild:hover {
   box-shadow: -2px 2px 2px #0048ffa8;
-  transform: translate(10%, 0%) perspective(1500px) rotateY(10deg)
+  transform: translate(2%, 0%) perspective(1500px) rotateY(10deg)
     rotateX(10deg);
-}
-
-.mybuild h5 {
-  background-color: none;
-  z-index: 99 !important;
-  font-size: 0.6em;
-}
-.mybuild p {
+  }
+  
+  .mybuild h5 {
+    background-color: none;
+    z-index: 99 !important;
+    font-size: 0.6em;
+  }
+  .mybuild p {
   font-size: 0.7em;
   width: 100%;
+}
+
+
+.logo {
+  height: 60px;
+  width: auto;
+  position: absolute;
+  top: 20px;
+  left: 1%;
 }
