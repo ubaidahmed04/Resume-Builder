@@ -2,7 +2,7 @@
 
 .home-main {
   background-color: black;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,30 +13,41 @@
 }
 
 .text-container {
-    display: flex;
-    flex-direction: column !important;
-    justify-content: center;
-    color: white;
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center;
+  color: white;
+  position: relative;
+  top: 70px; 
+}
+@media (max-width: 600px) {
+  .home-main {
+    padding: 20px 0px;
+    display: block;
+  }
+  .text-container {
+    padding: 70px 0px;
+  }
 }
 .text-container h3 {
-    font-weight: 600;
+  font-weight: 600;
 }
 .text-container .btn {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    background-color: #494949;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  background-color: #494949;
 }
 .text-container .btn:hover {
-    background-color: #1c1c1c;
+  background-color: #1c1c1c;
+  color: white;
 }
 
 @media (max-width: 600px) {
-    .text-container h3 {
-        font-size: 40px;
-        font-weight: 600;
-    }  
+  .text-container h3 {
+    font-size: 40px;
+    font-weight: 600;
+  }
 }
-
 
 .img-container {
   height: 100vh;
@@ -62,27 +73,46 @@
     rotateX(10deg);
 }
 
-
 .home-main .text-para {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: italic;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .mybuild {
   padding: 6px 8px;
-  width: 120px;
-  height: 160px;
+  width: 100%;
   margin: 25px 0px;
   word-wrap: break-word;
   overflow: hidden;
   color: #fff;
-  background-color: #494949;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #ffffff inset;
+  transition: all 0.3s;
+  text-decoration: none;
 }
-.mybuild h5 {
-  font-size: .6em;
-}
-.mybuild p {
-  font-size: .7em;
+.mybuild:hover {
+  box-shadow: -2px 2px 2px #0048ffa8;
+  transform: translate(2%, 0%) perspective(1500px) rotateY(10deg)
+    rotateX(10deg);
+  }
+  
+  .mybuild h5 {
+    background-color: none;
+    z-index: 99 !important;
+    font-size: 0.6em;
+  }
+  .mybuild p {
+  font-size: 0.7em;
   width: 100%;
+}
+
+
+.logo {
+  height: 60px;
+  width: auto;
+  position: absolute;
+  top: 20px;
+  left: 1%;
 }

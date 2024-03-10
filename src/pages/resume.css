@@ -1,6 +1,5 @@
 .container {
   max-width: 700px;
-  background: #fff;
   margin: 0px auto 0px;
   box-shadow: 1px 1px 2px #dad7d7;
   border-radius: 3px;
@@ -11,7 +10,7 @@
 .icon {
   position: fixed;
   top: 30px;
-  left: 10%;
+  left: 2%;
   cursor: pointer;
 }
 
@@ -95,7 +94,7 @@
   }
 
   .right {
-    tex-align: right;
+    text-align: right;
     width: 39%;
   }
 
@@ -113,9 +112,9 @@
     text-decoration: underline;
     color: #000;
   }
-
+/* 
   .skills {
-  }
+  } */
 
   .skills__item {
     margin-bottom: 10px;

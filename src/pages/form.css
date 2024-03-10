@@ -109,10 +109,8 @@
   } */
 
 .resume-form {
-  background-color: #000;
-  border-radius: 20px;
-  padding: 50px 200px;
-  margin: 40px 0px;
+  background-color: #fff;
+  padding: 70px 200px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -125,7 +123,7 @@
 }
 .resume-form h1,
 label {
-  color: #fff;
+  color: #000;
 }
 .resume-form .error-lable {
   font-size: 14px;
@@ -134,35 +132,32 @@ label {
 }
 
 .open-modal {
-  color: #fff;
   backdrop-filter: blur(5px);
 }
 
 .open-modal > * > * {
   font-family: "Poppins", sans-serif;
   box-shadow: -0px 0px 10px rgb(109, 109, 109);
-  background-color: black;
-}
-.open-modal .btn-close {
-  background-color: white;
+
 }
 
 
 .qualification {
-  margin-left: 20px;
-  color: #b3b3b3;
+  border-radius: 4px;
+  background-color: #0000002d;
+  padding: 0px 6px;
 }
 
 .icon {
-  position: fixed;
-  top: 30px;
-  left: 10%;
+  position: absolute;
+  top: 20px;
+  left: 1%;
   cursor: pointer;
   color: #000;
   background-color: #fff;
+  box-shadow: 0px 0px 5px #000000a2;
   padding: 10px;
   width: auto;
   border-radius: 50%;
-  font-size: 1em;
   z-index: 3;
 }
